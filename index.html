@@ -3,36 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harry Potter Quiz</title>
+    <title>Harry Potter Trivial Pursuit</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
             margin: 0;
             padding: 20px;
+            background-color: #f4f4f4;
         }
         .quiz-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 600px;
-            margin: 0 auto;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
         }
         .question {
             margin-bottom: 20px;
         }
+        .question p {
+            margin: 0;
+        }
+        .question div {
+            margin-top: 10px;
+        }
         button {
-            background-color: #4CAF50;
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #4CAF50;
             color: white;
             border: none;
-            padding: 10px 20px;
-            text-align: center;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
             border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        #result {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -40,7 +55,6 @@
     <div class="quiz-container">
         <h1>Harry Potter Trivial Pursuit</h1>
         <form id="quizForm">
-            <!-- Domande -->
             <div class="question">
                 <p>1. Chi è il nuovo insegnante di Difesa Contro le Arti Oscure a Hogwarts nel quinto anno di Harry?</p>
                 <div>
@@ -129,11 +143,78 @@
                     <input type="radio" id="q7c" name="q7" value="c">
                     <label for="q7c">Stupeficium</label><br>
                     <input type="radio" id="q7d" name="q7" value="d">
-                    <label for="q7d">Levicorpus</label>
+                    <label for="q7d">Protego</label>
                 </div>
             </div>
             <div class="question">
-                <p>8. Chi è il direttore della casa di Serpeverde?</p>
+                <p>8. Chi è il Guardiano dei Segreti del Quartier Generale dell'Ordine della Fenice?</p>
                 <div>
                     <input type="radio" id="q8a" name="q8" value="a">
-                    <label for="q8
+                    <label for="q8a">Albus Silente</label><br>
+                    <input type="radio" id="q8b" name="q8" value="b">
+                    <label for="q8b">Sirius Black</label><br>
+                    <input type="radio" id="q8c" name="q8" value="c">
+                    <label for="q8c">Remus Lupin</label><br>
+                    <input type="radio" id="q8d" name="q8" value="d">
+                    <label for="q8d">Minerva McGranitt</label>
+                </div>
+            </div>
+            <div class="question">
+                <p>9. Chi viene a salvare Harry dal processo disciplinare al Ministero della Magia?</p>
+                <div>
+                    <input type="radio" id="q9a" name="q9" value="a">
+                    <label for="q9a">Albus Silente</label><br>
+                    <input type="radio" id="q9b" name="q9" value="b">
+                    <label for="q9b">Minerva McGranitt</label><br>
+                    <input type="radio" id="q9c" name="q9" value="c">
+                    <label for="q9c">Remus Lupin</label><br>
+                    <input type="radio" id="q9d" name="q9" value="d">
+                    <label for="q9d">Arthur Weasley</label>
+                </div>
+            </div>
+            <div class="question">
+                <p>10. Qual è la profezia che Harry e i suoi amici trovano al Ministero della Magia?</p>
+                <div>
+                    <input type="radio" id="q10a" name="q10" value="a">
+                    <label for="q10a">Solo uno può sopravvivere</label><br>
+                    <input type="radio" id="q10b" name="q10" value="b">
+                    <label for="q10b">Né può vivere mentre l'altro sopravvive</label><br>
+                    <input type="radio" id="q10c" name="q10" value="c">
+                    <label for="q10c">Il Prescelto è nato alla fine di luglio</label><br>
+                    <input type="radio" id="q10d" name="q10" value="d">
+                    <label for="q10d">Deve affrontare Voldemort da solo</label>
+                </div>
+            </div>
+            <button type="button" onclick="calculateScore()">Invia</button>
+        </form>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculateScore() {
+            const answers = {
+                q1: 'c',
+                q2: 'a',
+                q3: 'c',
+                q4: 'c',
+                q5: 'b',
+                q6: 'c',
+                q7: 'a',
+                q8: 'b',
+                q9: 'a',
+                q10: 'b'
+            };
+            let score = 0;
+
+            for (const [question, correctAnswer] of Object.entries(answers)) {
+                const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+                if (userAnswer && userAnswer.value === correctAnswer) {
+                    score++;
+                }
+            }
+
+            document.getElementById('result').innerText = `Il tuo punteggio è: ${score} su 10`;
+        }
+    </script>
+</body>
+</html>
