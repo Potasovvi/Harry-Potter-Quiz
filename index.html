@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Potter Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+        .quiz-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Harry Potter Trivial Pursuit</h1>
+        <form id="quizForm">
+            <!-- Domande -->
+            <div class="question">
+                <p>1. Chi è il nuovo insegnante di Difesa Contro le Arti Oscure a Hogwarts nel quinto anno di Harry?</p>
+                <div>
+                    <input type="radio" id="q1a" name="q1" value="a">
+                    <label for="q1a">Severus Piton</label><br>
+                    <input type="radio" id="q1b" name="q1" value="b">
+                    <label for="q1b">Dolores Umbridge</label><br>
+                    <input type="radio" id="q1c" name="q1" value="c">
+                    <label for="q1c">Remus Lupin</label><br>
+                    <input type="radio" id="q1d" name="q1" value="d">
+                    <label for="q1d">Gilderoy Allock</label>
+                </div>
+            </div>
+            <div class="question">
+                <p>2. Qual è il nome del gruppo segreto fondato da Harry per insegnare agli studenti Difesa Contro le Arti Oscure?</p>
+                <div>
+                    <input type="radio" id="q2a" name="q2" value="a">
+                    <label for="q2a">L'Esercito di Silente</label><br>
+                    <input type="radio" id="q2b" name="q2" value="b">
+                    <label for="q2b">L'Esercito di Hogwarts</label><br>
+                    <input type="radio" id="q2c" name="q2" value="c">
+                    <label for="q2c">L'Ordine di Fenice</label><br>
+                    <input type="radio" id="q2d" name="q2" value="d">
+                    <label for="q2d">La Guardia di Hogwarts</label>
+                </div>
+            </div>
+            <div class="question">
+                <p>3. Chi diventa Prefetto di Grifondoro nel quinto anno?</p>
+                <div>
+                    <input type="radio" id="q3a" name="q3" value="a">
+                    <label for="q3a">Harry Potter</label><br>
+                    <input type="radio" id="q3b" name="q3" value="b">
+                    <label for="q3b">Hermione Granger</label><br>
+                    <input type="radio" id="q3c" name="q3" value="c">
+                    <label for="q3c">Ron Weasley</label><br>
+                    <input type="radio" id="q3d" name="q3" value="d">
+                    <label for="q3d">Ginny Weasley</label>
+                </div>
+            </div>
+            <div class="question">
+                <p>4. Dove si trova la sede dell'Ordine della Fenice?</p>
+                <div>
+                    <input type="radio" id="q4a" name="q4" value="a">
+                    <label for="q4a">A Diagon Alley</label><br>
+                    <input type="radio" id="q4b" name="q4" value="b">
+                    <label for="q4b">A Hogsmeade</label><br>
+                    <input type="radio" id="q4c" name="q4" value="c">
+                    <label for="q4c">Al numero 12 di Grimmauld Place</label><br>
+                    <input type="radio" id="q4d" name="q4" value="d">
+                    <label for="q4d">Al castello di Hogwarts</label>
+                </div>
+            </div>
+            <div class="question">
+                <p>5. Quale creatura salva Harry e i suoi amici nella Foresta Proibita quando vengono attaccati dai Thestral?</p>
+                <div>
+                    <input type="radio" id="q5a" name="q5" value="a">
+                    <label for="q5a">Un unicorno</label><br>
+                    <input type="radio" id="q5b" name="q5" value="b">
+                    <label for="q5b">Un Centauro</label><br>
+                    <input type="radio" id="q5c" name="q5" value="c">
+                    <label for="q5c">Un Troll</label><br>
+                    <input type="radio" id="q5d" name="q5" value="d">
+                    <label for="q5d">Un Gigante</label>
+                </div>
+            </div>
+            <div class="question">
+                <p>6. Chi viene attaccato dai Dissennatori all'inizio del libro?</p>
+                <div>
+                    <input type="radio" id="q6a" name="q6" value="a">
+                    <label for="q6a">Harry e Hermione</label><br>
+                    <input type="radio" id="q6b" name="q6" value="b">
+                    <label for="q6b">Harry e Ron</label><br>
+                    <input type="radio" id="q6c" name="q6" value="c">
+                    <label for="q6c">Harry e Dudley</label><br>
+                    <input type="radio" id="q6d" name="q6" value="d">
+                    <label for="q6d">Harry e Cho</label>
+                </div>
+            </div>
+            <div class="question">
+                <p>7. Qual è l'incantesimo che Harry insegna per primo all'Esercito di Silente?</p>
+                <div>
+                    <input type="radio" id="q7a" name="q7" value="a">
+                    <label for="q7a">Expelliarmus</label><br>
+                    <input type="radio" id="q7b" name="q7" value="b">
+                    <label for="q7b">Patronus</label><br>
+                    <input type="radio" id="q7c" name="q7" value="c">
+                    <label for="q7c">Stupeficium</label><br>
+                    <input type="radio" id="q7d" name="q7" value="d">
+                    <label for="q7d">Levicorpus</label>
+                </div>
+            </div>
+            <div class="question">
+                <p>8. Chi è il direttore della casa di Serpeverde?</p>
+                <div>
+                    <input type="radio" id="q8a" name="q8" value="a">
+                    <label for="q8
